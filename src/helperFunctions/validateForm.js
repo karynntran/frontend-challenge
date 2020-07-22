@@ -1,6 +1,6 @@
 // use this function to validate your form
 
 export default (body) => {
-  // replace this code with your validation 
+  alert("test helper function")
   return console.log(body)
 }
