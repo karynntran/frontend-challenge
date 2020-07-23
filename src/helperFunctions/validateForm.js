@@ -12,7 +12,7 @@ export default (formValues) => {
 					errors[value] = "Last name is required."
 					break;
 				case 'email':
-					errors[value] = "Email name is required."
+					errors[value] = "A valid email is required."
 					break;
 				case 'company':
 					errors[value] = "Company name is required."

@@ -98,7 +98,6 @@ class SignUpForm extends React.Component {
 	) 	
   }
 
-
   renderSignUpForm = () => {
   	return (
     	<form onSubmit={this.handleSubmit} data-testid="form">
