@@ -5,7 +5,7 @@ describe('submitForm()', () => {
     expect(submitForm).toBeDefined()
   })
   it('should return status and form data', async () => {
-    const stubbedForm = { name: 'luke', email: 'luke@awesomesauce.com' }
+    const stubbedForm = { firstname: 'FirstTest', lastname: 'LastTest', email: 'test@test.com', company: 'TestCompany', role: 'mentor' }
     const results = await submitForm(stubbedForm)
     const { status, data } = results
     expect(status).toBe(200)

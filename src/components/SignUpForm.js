@@ -95,7 +95,7 @@ class SignUpForm extends React.Component {
 
   renderSignUpForm = () => {
   	return (
-    	<form onSubmit={this.handleSubmit}>
+    	<form onSubmit={this.handleSubmit} data-testid="form">
 	    	<div className="SignUpForm-input-group">
 		    	<label>
 		    		First Name:
