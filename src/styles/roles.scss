@@ -3,11 +3,12 @@
 #Role-buttons {
 	display: flex;
 	padding: 0;
-	margin: 0;
+	margin: 1rem auto;
 	li {
 		flex: 1;
 		list-style-type: none;
 		cursor: pointer;
+		margin: 0 .5rem;
 		&:hover {
 			div {
 				box-shadow: .2rem .2rem .5rem 0 rgba(255,255,255,0.5);
@@ -16,6 +17,7 @@
 		}
 		&.active {
 			div {
+				background-color: $yellow;
 				box-shadow: .5rem .5rem .5rem 0 rgba(48,60,108, 1);
 			}
 		}
@@ -53,6 +55,7 @@
 		justify-content: center;
 		li {
 			flex: 1 0 50%;
+			margin: auto;
 		}
 		div {
 			width: 7rem;
@@ -62,7 +65,7 @@
 	}
 }
 
-@media all and (max-width: $break-small-v) {
+@media all and (max-width: $break-small-h) {
 	#Role-buttons {
 		flex-wrap: wrap;
 		justify-content: center;
@@ -72,7 +75,6 @@
 		div {
 			width: 5rem;
 			height: 5rem;
-			margin: .5rem auto;			
 		}
 	}
 }
