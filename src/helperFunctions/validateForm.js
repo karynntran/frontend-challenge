@@ -24,7 +24,6 @@ export default (formValues) => {
 		}
 	}
 
-	console.log(errors)
 	if (Object.keys(errors).length === 0) {
 		return 'valid';
 	}

@@ -1,6 +1,13 @@
 import React from 'react';
 import { validateForm, submitForm } from '../helperFunctions';
+
+import { Roles } from './Roles';
+
+
 import '../styles/signupform.scss';
+
+
+
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -19,7 +26,8 @@ class SignUpForm extends React.Component {
 	    	email: "",
 	    	company: "",
 	    	role: ""
-    	}
+    	},
+    	submitted: false
     };
   }
 
@@ -35,21 +43,28 @@ class SignUpForm extends React.Component {
 
   handleErrors = (errorType) => {
 	if (this.state.errors[errorType]) {
-		return <span className="error">{this.state.errors[errorType]}</span>
+		return <span className="SignUpForm-error">{this.state.errors[errorType]}</span>
 	}
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state.formValues)
   	let errorsList = validateForm(this.state.formValues);
-   	this.setState({
-	    errors: errorsList
-	})
+
+  	if (errorsList === 'valid') {
+  		this.renderSuccessfulSubmission(this.state.formValues);
+  		this.setState({
+  			submitted: true
+  		})
+		submitForm(this.state.formValues)
+  	} else {
+	   	this.setState({
+		    errors: errorsList
+		})
+  	}
   }
 
   onFocus = e => {
-  	console.log('hit')
   	let {name} = e.target;
 	this.setState(prevState => ({
 	    errors: {
@@ -59,11 +74,29 @@ class SignUpForm extends React.Component {
 	}))
   }
 
-  render() {
-    return (
-    	<div id="signup-form">
+  setRole = (role) => {
+	this.setState(prevState => ({
+	    formValues: {
+	        ...prevState.formValues,
+	        role: role
+	    },
+	   	errors: {
+	        ...prevState.errors,
+	        role: ''
+	    } 
+	}))
+  }
+
+  renderSuccessfulSubmission = ({firstname}) => {
+  	return (
+  		<div className="SignUpForm-form-submit">{`Thanks ${firstname}! You've successfully RSVPed. Stay tuned for more details!`}</div>
+  	)
+  }
+
+  renderSignUpForm = () => {
+  	return (
     	<form onSubmit={this.handleSubmit}>
-	    	<div className="input-group-name">
+	    	<div className="SignUpForm-input-group">
 		    	<label>
 		    		First Name:
 		    		<input onFocus={this.onFocus} name="firstname" type="text" value={this.state.value} onChange={this.handleChange} />
@@ -84,26 +117,34 @@ class SignUpForm extends React.Component {
 	    	<label>
 		    	Company:
 		    	<input onFocus={this.onFocus} name="company" type="text" value={this.state.value} onChange={this.handleChange} />
-	    		{this.handleErrors("email")}
+	    		{this.handleErrors("company")}
 	    	</label>
+	    	<div></div>
 	    	<label>
 		    	Your Role:
-		    	<select onFocus={this.onFocus} name="role" onChange={this.handleChange}>
-		    		<option value="">Select your role</option>    
-			    	<option value="investor">Investor</option>
-			    	<option value="mentor">Mentor</option>
-			    	<option value="founder">Founder</option>
-			    	<option value="member">Network Member</option>
-	    		</select>
+		    	<Roles setRole={this.setRole}/>
 	    		{this.handleErrors("role")}
 	    	</label>
-	    	<input type="submit" value="Submit" />
+	    	<input id="submit" type="submit" value="Sign Up!" />
     	</form>
-
-
-    	</div>
-    );
+  	)
   }
+
+
+  render() {
+  	if (this.state.submitted) {
+  		return (
+  			<section id="SignUpForm">
+				{this.renderSuccessfulSubmission(this.state.formValues)}
+			</section>)
+  	} else {
+  		return  (
+  			<section id="SignUpForm">
+  				{this.renderSignUpForm()}
+  			</section>
+  		) 			
+  	}
+  	}
 }
 
 export default SignUpForm;

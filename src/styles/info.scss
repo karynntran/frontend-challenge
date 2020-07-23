@@ -1,0 +1,40 @@
+@import 'variables';
+
+#Info {
+	color: #fff;
+	text-align: center;
+	width: 100%;
+}
+
+.Info-content {
+	width: 37rem;
+	margin: 0 auto;
+	text-align: left;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-size: 2rem;
+	letter-spacing: .2rem;
+}
+
+h1, 
+.Info-question,
+.Info-answer {
+	text-align: center;
+	span {
+		font-weight: 700;
+	}
+}
+
+.Info-question,
+.Info-answer {
+	font-style: italic;
+}
+
+
+@media all and (max-width: $break-tablet-h) {
+	.Info-content {
+		width: 75%;
+	}
+}

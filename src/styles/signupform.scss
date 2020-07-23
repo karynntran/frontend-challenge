@@ -1,0 +1,102 @@
+@import 'variables';
+
+
+#SignUpForm {
+	width: 100%;
+	height: auto;
+
+	form,
+	.SignUpForm-form-submit {
+		background-color: $orange;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 70%;
+		height: 100%;
+		position: relative;
+		padding: 2rem;
+		box-shadow: .5rem .5rem .8rem 0 rgba(0,0,0,0.5);
+		border-radius: .5rem;
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+		margin: 1rem 0;
+		text-transform: uppercase;
+		letter-spacing: .1rem;
+		font-size: 1rem;
+	}
+
+	input,
+	select {
+		border: .1rem solid #ccc;
+		height: 2rem;
+		padding: .5rem;
+		border: none;	
+	}
+
+	select,
+	#submit {
+		width: 100%;
+		height: 3rem;
+	}
+
+	#submit {
+		background-color: $yellow;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: .2rem;
+		font-size: 1.6rem;
+		color: $darkblue;
+	}
+
+	option {
+		text-transform: uppercase;
+	}
+
+	.SignUpForm-input-group {
+		display: flex;
+		position: relative;
+		label {
+			flex: 1;
+		}
+		input {
+			margin: 0 .2rem;
+			&:nth-of-type(2) {
+				position: absolute;
+				right: 0;
+			}	
+		}
+	}
+
+	.SignUpForm-error {
+		color: red;
+		padding: .25rem;
+		text-align: right;
+	}
+
+	.SignUpForm-form-submit {
+		text-align: center;
+		color: #fff;
+		font-size: 1.2rem;
+	}
+
+}
+
+@media all and (max-width: $break-tablet-v) {
+	#SignUpForm {
+		.SignUpForm-input-group {
+			display: block;
+		}
+		label {
+			flex: 0;
+		}
+		input {
+			margin: 0;
+			&:nth-of-type(2) {
+				position: relative;
+				right: auto;
+			}
+		}
+	}
+}

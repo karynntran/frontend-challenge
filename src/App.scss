@@ -1,0 +1,14 @@
+@import 'styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+body {
+	box-sizing: border-box;
+	background: $darkblue;
+}
+
+.App {
+	height: 150vmin;
+	padding: 2rem;
+	position: relative;
+	font-family: 'DM Sans', sans-serif;
+}
