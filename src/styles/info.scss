@@ -30,6 +30,16 @@ h1,
 .Info-question,
 .Info-answer {
 	font-style: italic;
+	background-color: $lightblue;
+	padding: .5rem;
+	color: $darkblue;
+	span {
+		font-style: initial;
+	}
+}
+
+.Info-instructions {
+	text-align: center;
 }
 
 

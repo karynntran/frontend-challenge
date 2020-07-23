@@ -109,7 +109,7 @@ class SignUpForm extends React.Component {
 	    	{this.renderInput("Email", "email", "email")}
 	    	{this.renderInput("Company", "company", "text")}
 	    	<label>
-		    	Your Role:
+		    	Your Role
 		    	<Roles setRole={this.setRole}/>
 	    		{this.handleErrors("role")}
 	    	</label>
