@@ -4,7 +4,7 @@ import SignUpForm from '../components/SignUpForm';
 import { submitForm } from '../helperFunctions'
 
 describe('Signup form submissions', () => {
-  it('should render validation input for missing firstname', async () => {
+  it('should render validation for missing input', async () => {
 	const { debug, getByLabelText, getByText } = render(<SignUpForm />);
 	const firstNameInput = getByLabelText(/First Name/i);
 	fireEvent.change(firstNameInput, { target: { value: "" } });

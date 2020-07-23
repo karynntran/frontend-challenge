@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../assets/techstars-logo-white.svg';
 import '../styles/info.scss';
 
-function Info() {
+const Info = () => {
 	return (
 		<section id="Info">
 			<div className="Info-content">

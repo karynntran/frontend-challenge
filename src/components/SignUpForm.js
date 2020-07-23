@@ -1,13 +1,8 @@
 import React from 'react';
 import { validateForm, submitForm } from '../helperFunctions';
-
 import { Roles } from './Roles';
 
-
 import '../styles/signupform.scss';
-
-
-
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -93,33 +88,26 @@ class SignUpForm extends React.Component {
   	)
   }
 
+  renderInput = (labelName, nameAttr, type) => {
+	return (
+		<label>
+			{labelName}
+			<input onFocus={this.onFocus} name={nameAttr} type={type} value={this.state.value} onChange={this.handleChange} />
+			{this.handleErrors(nameAttr)}
+		</label>
+	) 	
+  }
+
+
   renderSignUpForm = () => {
   	return (
     	<form onSubmit={this.handleSubmit} data-testid="form">
 	    	<div className="SignUpForm-input-group">
-		    	<label>
-		    		First Name:
-		    		<input onFocus={this.onFocus} name="firstname" type="text" value={this.state.value} onChange={this.handleChange} />
-		    		{this.handleErrors("firstname")}
-		    	</label>
-		    	<label>
-			    	Last Name:
-			    	<input onFocus={this.onFocus} name="lastname" type="text" value={this.state.value} onChange={this.handleChange} />
-		    		{this.handleErrors("lastname")}
-		    	</label>
+		    	{this.renderInput("First Name", "firstname", "text")}
+		    	{this.renderInput("Last Name", "lastname", "text")}
 	    	</div>
-	    	<label>
-		    	Email:
-		    	<input onFocus={this.onFocus} name="email" type="email" value={this.state.value} onChange={this.handleChange} />
-	    		{this.handleErrors("email")}
-
-	    	</label>
-	    	<label>
-		    	Company:
-		    	<input onFocus={this.onFocus} name="company" type="text" value={this.state.value} onChange={this.handleChange} />
-	    		{this.handleErrors("company")}
-	    	</label>
-	    	<div></div>
+	    	{this.renderInput("Email", "email", "email")}
+	    	{this.renderInput("Company", "company", "text")}
 	    	<label>
 		    	Your Role:
 		    	<Roles setRole={this.setRole}/>

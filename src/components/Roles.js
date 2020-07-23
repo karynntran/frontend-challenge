@@ -19,7 +19,6 @@ export const Roles = ({setRole}) => {
   		return active == role ? "Role-button active" : "Role-button"
   	}
 
-
 	return (
 		<ul id="Role-buttons">
 			<li onClick={(e) => setActiveRole("investor")} className={setClass("investor")} id="Role-investor">
@@ -49,15 +48,3 @@ export const Roles = ({setRole}) => {
 		</ul>
 	)
 }
-
-// const Select = () => {
-// 	return (
-// 		<select onFocus={this.onFocus} name="role" onChange={this.handleChange}>
-// 			<option value="">Select your role</option>    
-// 	    	<option value="investor">Investor</option>
-// 	    	<option value="mentor">Mentor</option>
-// 	    	<option value="founder">Founder</option>
-// 	    	<option value="member">Network Member</option>
-// 		</select>
-// 	)
-// }
