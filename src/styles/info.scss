@@ -1,7 +1,7 @@
 @import 'variables';
 
 #Info {
-	color: #fff;
+	color: $white;
 	text-align: center;
 	width: 100%;
 	.Info-content {
@@ -21,20 +21,30 @@
 	.Info-question,
 	.Info-answer {
 		text-align: center;
-		span {
-			font-weight: 700;
-		}
 	}
 
 	.Info-question,
 	.Info-answer {
 		font-style: italic;
-		background-color: $lightblue;
 		padding: .5rem;
-		color: $darkblue;
-		span {
-			font-style: initial;
-		}
+		color: $white;
+		display: flex;
+		text-align: left;
+		align-items: center;
+		margin-top: 1rem;
+	}
+
+	.Info-qa-symbol {
+		font-weight: bold;
+		font-style: initial;
+		color: $white;
+		font-size: 3rem;
+		margin-right: 1rem;
+		opacity: .3;
+	}
+
+	.Info-question-answer {
+		border-bottom: .2rem solid $green;
 	}
 
 	.Info-instructions {
@@ -51,6 +61,15 @@
 		}
 		.Info-content {
 			width: 100%;
+		}
+		.Info-qa-symbol {
+			color: $green;
+			opacity: 1;
+			margin-right: .5rem;
+			font-size: 2rem;
+		}
+		.Info-question-answer {
+			border-bottom: none;
 		}
 	}
 }

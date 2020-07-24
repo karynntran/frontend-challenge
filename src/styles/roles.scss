@@ -17,15 +17,15 @@
 		}
 		&.active {
 			div {
-				background-color: $yellow;
-				box-shadow: .5rem .5rem .5rem 0 rgba(48,60,108, 1);
+				background-color: $slate;
+				box-shadow: .3rem .3rem .3rem 0 rgba(48,60,108, 1);
 			}
 		}
 	}
 	div {
 		width: 5rem;
 		height: 5rem;
-		background-color: $lightblue;
+		background-color: #ccc;
 		padding: 1rem;
 		border-radius: .5rem;
 		box-shadow: .3rem .3rem .5rem 0 rgba(0,0,0,0.5);
@@ -49,7 +49,7 @@
 
 }
 
-@media all and (max-width: $break-tablet-v) {
+@media all and (max-width: $break-tablet-h) {
 	#Role-buttons {
 		flex-wrap: wrap;
 		justify-content: center;
