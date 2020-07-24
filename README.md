@@ -51,3 +51,10 @@ Launches the test runner in the interactive watch mode.<br />
 ### `yarn build`
 
 Builds a production-ready version of the application
+
+
+### `Attributes for icons`
+Mentor by irene hoffman from the Noun Project
+Invest by Alice Design from the Noun Project
+Idea Founder by Gan Khoon Lay from the Noun Project
+Contact by Alice Design from the Noun Project
