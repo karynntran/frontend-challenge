@@ -15,7 +15,7 @@ const imageMap = {
 const renderRolesList = (roles, setActiveRole, setClass) => {
 	return roles.map(role => {
 		return (
-			<li onClick={(e) => setActiveRole(role)} className={setClass(role)} id={`Role-${role}`}>
+			<li aria-label={`role-input-${role}`} key={role} onClick={(e) => setActiveRole(role)} className={setClass(role)} id={`Role-${role}`}>
 				<div>
 					<span style={{ textTransform: 'capitalize'}}>{role}</span>
 					<img src={imageMap[role]} alt={role} />

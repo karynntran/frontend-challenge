@@ -92,7 +92,7 @@ class SignUpForm extends React.Component {
 	return (
 		<label>
 			{labelName}
-			<input onFocus={this.onFocus} name={nameAttr} type={type} value={this.state.value} onChange={this.handleChange} />
+			<input aria-label={`${nameAttr}`} onFocus={this.onFocus} name={nameAttr} type={type} value={this.state.value} onChange={this.handleChange} />
 			{this.handleErrors(nameAttr)}
 		</label>
 	) 	
@@ -112,7 +112,7 @@ class SignUpForm extends React.Component {
 		    	<Roles setRole={this.setRole}/>
 	    		{this.handleErrors("role")}
 	    	</label>
-	    	<input id="submit" type="submit" value="Sign Up!" />
+	    	<input aria-label="submit" id="submit" type="submit" value="Sign Up!" />
     	</form>
   	)
   }
